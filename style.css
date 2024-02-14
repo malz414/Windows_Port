@@ -180,6 +180,7 @@ img {
   left: 0;
   right: 0;
   z-index: 99999;
+  background-image: url(img/core-img/music.gif);
 }
   .preloader .lds-ellipsis {
     display: inline-block;
