@@ -4,11 +4,44 @@
     var browserWindow = $(window);
 
     // :: 1.0 Preloader Active Code
-    browserWindow.on('load', function () {
-        $('.preloader').fadeOut('slow', function () {
-            $(this).remove();
+    // browserWindow.on('load', function () {
+    //     $('.preloader').fadeOut('slow', function () {
+    //         $(this).remove();
+    //     });
+    // });
+
+ 
+    // :: 1.0 Preloader Active Code
+    $(document).ready(function() {
+        $('#intro').on('click', function () {
+            if ($(window).width() > 768) { // Change 768 to the minimum width for your desired screen size
+                // Change background image
+                changeBackgroundImage();
+    
+                // Play sound here
+                playSound();
+    
+                // Add a delay of 1000 milliseconds (1 second) before fading out the preloader
+                setTimeout(function() {
+                    $('.preloader').fadeOut('slow', function () {
+                        $(this).remove();
+                        // Add the function you want to execute after the preloader fades out here
+                    });
+                }, 500);
+            }
         });
     });
+    function changeBackgroundImage() {
+        // Replace the background image with a new one
+        $('.preloader').css('background-image', 'url(img/core-img/2.png)');
+    }
+    
+    function playSound() {
+        // Add code to play the sound here
+        // For example, if you're using HTML5 <audio> element:
+        var audio = new Audio('path_to_your_sound_file.mp3');
+        audio.play();
+    }
 
     // :: 2.0 Nav Active Code
     if ($.fn.classyNav) {
