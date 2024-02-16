@@ -14,7 +14,12 @@
     // :: 1.0 Preloader Active Code
 $(document).ready(function() {
     // Check if the device is a mobile device
-    if (!isMobileDevice()) {
+    if (isMobileDevice()) {
+        $('.preloader').remove();
+    }
+    
+    
+    else {
         var mediaQuery = window.matchMedia('(min-width: 768px)'); // Adjust the minimum width as needed
 
         // Check if the screen width is large enough
@@ -49,9 +54,11 @@ function changeBackgroundImage() {
 function playSound() {
     // Add code to play the sound here
     // For example, if you're using HTML5 <audio> element:
-    var audio = new Audio('audio/Windows_94');
+    var audio = new Audio('audio/Windows_94.wav');
     audio.play();
 }
+
+
 
     // :: 2.0 Nav Active Code
     if ($.fn.classyNav) {
