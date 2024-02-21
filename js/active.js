@@ -13,8 +13,7 @@
  
     // :: 1.0 Preloader Active Code
 $(document).ready(function() {
-    var audio = new Audio('audio/Windows_94.wav');
-    audio.preload = "auto";
+    
     
 
 
@@ -33,16 +32,40 @@ $(document).ready(function() {
             $('#intro').on('click', function () {
           
                 changeBackgroundImage2();
-                audio.play()
-
-                audio.addEventListener('canplaythrough',  changeBackgroundImage(), false);
-                audio.addEventListener('canplaythrough',  Timeout(), false);
+                
+                    playAudio();
+             
+              
                 
           
             });
         }
     }
 });
+
+function playAudio() {
+    var audio = new Audio('audio/Windows_94.wav');
+
+    
+    // Check if audio is already loaded
+    if (audio.readyState >= 2) {
+        // Audio is already loaded, play it
+        audio.play();
+        // Call the function you want to execute after audio finishes playing
+        Timeout();
+                    changeBackgroundImage();
+    } else {
+        // If audio is not yet loaded, wait for it to load
+        audio.oncanplaythrough = function() {
+            // Audio has finished loading, play it
+            audio.play();
+            // Call the function you want to execute after audio finishes playing
+            Timeout();
+            changeBackgroundImage();
+        };
+    }
+}
+
 
 function Timeout(){
 
@@ -59,8 +82,10 @@ function isMobileDevice() {
 }
 
 function changeBackgroundImage() {
-    // Replace the background image with a new one
-    $('.preloader').css('background-image', 'url(img/core-img/2.png)');
+    setTimeout(function () {
+        // Replace the background image with a new one
+        $('.preloader').css('background-image', 'url(img/core-img/2.png)');
+            }, 500);
 }
 function changeBackgroundImage2() {
     // Replace the background image with a new one
