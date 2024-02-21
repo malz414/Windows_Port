@@ -14,8 +14,8 @@
     // :: 1.0 Preloader Active Code
 $(document).ready(function() {
     var audio = new Audio('audio/Windows_94.wav');
-    audio.load();
- 
+    audio.preload();
+    
 
 
     // Check if the device is a mobile device
@@ -31,18 +31,12 @@ $(document).ready(function() {
         if (mediaQuery.matches) {
             // Attach click event handler only for large screens
             $('#intro').on('click', function () {
-                
+          
                 changeBackgroundImage2();
-                audio.play();
-                audio.oncanplaythrough = function() {
-                   
-                    changeBackgroundImage();
-                        
-                    Timeout();
-              
-                };
-                
-               
+                audio.play()
+
+                audio.addEventListener('canplaythrough',  changeBackgroundImage(), false);
+                audio.addEventListener('canplaythrough',  Timeout(), false);
                 
           
             });
