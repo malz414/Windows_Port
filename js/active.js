@@ -14,8 +14,7 @@
     // :: 1.0 Preloader Active Code
 $(document).ready(function() {
     var audio = new Audio('audio/Windows_94.wav');
-    audio.play();
-    
+
 
     // Check if the device is a mobile device
     if (isMobileDevice()) {
@@ -30,22 +29,28 @@ $(document).ready(function() {
         if (mediaQuery.matches) {
             // Attach click event handler only for large screens
             $('#intro').on('click', function () {
-                // Change background image
-                changeBackgroundImage();
-
-                // Play sound here
-                playSound();
-                setTimeout(function () {
-                $('.preloader').fadeOut('slow', function () {
-                    $(this).remove();
-                    // Add the function you want to execute after the preloader fades out here
-                });
-            }, 1000);
+                
+                changeBackgroundImage2();
+                audio.addEventListener('canplaythrough',  changeBackgroundImage(), false);
+                audio.addEventListener('canplaythrough',  audio.play(), false);
+                audio.addEventListener('canplaythrough',  Timeout(), false);
+                
+          
             });
         }
     }
 });
 
+function Timeout(){
+
+    setTimeout(function () {
+        $('.preloader').fadeOut('slow', function () {
+            $(this).remove();
+            // Add the function you want to execute after the preloader fades out here
+        });
+    }, 1000);
+
+}
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
@@ -54,13 +59,13 @@ function changeBackgroundImage() {
     // Replace the background image with a new one
     $('.preloader').css('background-image', 'url(img/core-img/2.png)');
 }
-
-function playSound() {
-    // Add code to play the sound here
-    // For example, if you're using HTML5 <audio> element:
-    var audio = new Audio('audio/Windows_94.wav');
-    audio.play();
+function changeBackgroundImage2() {
+    // Replace the background image with a new one
+    $('.preloader').css('background-image', 'url(img/core-img/3.png)');
 }
+
+
+
 
 
 
