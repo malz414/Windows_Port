@@ -14,7 +14,7 @@
     // :: 1.0 Preloader Active Code
 $(document).ready(function() {
     var audio = new Audio('audio/Windows_94.wav');
-    audio.preload();
+    audio.preload = "auto";
     
 
 
