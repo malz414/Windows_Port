@@ -1,3 +1,5 @@
+
+
 (function ($) {
     'use strict';
 
@@ -43,6 +45,8 @@ $(document).ready(function() {
     }
 });
 
+
+
 function playAudio() {
     var audio = new Audio('audio/Windows_94.wav');
 
@@ -65,7 +69,6 @@ function playAudio() {
         };
     }
 }
-
 
 function Timeout(){
 
