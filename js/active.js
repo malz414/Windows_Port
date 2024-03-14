@@ -31,6 +31,7 @@ $(document).ready(function() {
     
     
     else {      
+        window.location.href = "mobile.html";
     }
 });
 
