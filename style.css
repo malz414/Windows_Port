@@ -37,7 +37,7 @@ h6 {
 
 p {
   color: #5f5f5f;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 2;
   font-weight: 400; }
 
@@ -409,7 +409,7 @@ button{
   padding: 20px;
   width: 4%;
   font-family: w95fa;
-  bottom: 5px;
+  bottom: 1vh;
   left: 16px;
   background-color: #CFB5DB;
   color: black;
@@ -495,8 +495,24 @@ input[type=text] {
   background-color: #F6E8FD;
   
 }
+input[type=email] {
+  border-left: 2px solid black;
+  border-right: 2px solid #E8DFE3;
+  border-top: 2px solid black;
+  border-bottom: 2px solid #E8DFE3;
+  background-color: #F6E8FD;
+  
+}
+input[type=message] {
+  border-left: 2px solid black;
+  border-right: 2px solid #E8DFE3;
+  border-top: 2px solid black;
+  border-bottom: 2px solid #E8DFE3;
+  background-color: #F6E8FD;
+  
+}
 textarea {
-  position: fixed;
+  position: absolute;
   left: 645px;
   border-left: 2px solid black;
   border-right: 2px solid #E8DFE3;
@@ -711,4 +727,9 @@ input[type=range]:focus {
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap; /* added line */
+}
+
+/* Styles for desktop */
+.desktop-content {
+  display: block; /* Ensure desktop content is displayed */
 }
