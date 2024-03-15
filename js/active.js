@@ -17,7 +17,7 @@
 $(document).ready(function() {
     $('.mobile-content').hide();
     let mobile = false
-    var mediaQuery = window.matchMedia('(min-width: 1200px)');
+    var mediaQuery = window.matchMedia('(min-width: 900px)');
     
       $(window).resize(function() {
         var windowWidth = $(window).width();
