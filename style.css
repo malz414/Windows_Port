@@ -20,7 +20,7 @@
 
 body {
   font-family: 'W95FA', sans-serif;
-  background-image: url(img/core-img/Untitled\ design.png); 
+  
   font-size: 14px;
   overflow: hidden; 
 }
@@ -267,7 +267,7 @@ opacity: 0;
   position: absolute;
 
   padding: 20px;
-  bottom: -600px; /* Initially hidden */
+  bottom: -10000px; /* Initially hidden */
   left: 20px;
   border: 1px solid black;
   background-color: #CFB5DB;
