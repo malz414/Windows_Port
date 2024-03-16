@@ -238,6 +238,20 @@ img {
   border-radius: 1.5px;
 }
 
+/* :: 3.5.0 Preloader */
+.preloader {
+  background-color: #ffffff;
+
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background-image: url(img/core-img/dizzy\ port.png);
+  background-size: 67%;
+}
 .modal-music-content {
   background-color: #fff;
   padding: 200px;
