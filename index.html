@@ -25,7 +25,14 @@
              
 <div class="desktop-content">
                 
-  
+  <div id="starting-screen">
+    <img src="img/core-img/coin.png" id="start-image" alt="Click to start">
+    <video id="intro-video" width="100%" height="auto">
+        <source src="img/core-img/coin.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
                 <!-- Modal 1 -->
                 <div id="bio" class="modal"   style=" width: 760px;
                 height: 517px;" >
@@ -331,7 +338,7 @@
      </footer>
  
       
-        </div>
+      </div>
     </section>
     </div>
 
@@ -481,6 +488,27 @@ navigator.clipboard.writeText(text).then(_ => {
           });
         });
         </script>
+       
+       <script>
+document.addEventListener("DOMContentLoaded", function() {
+    var startImage = document.getElementById("start-image");
+    var introVideo = document.getElementById("intro-video");
+    var mainContent = document.getElementById("main-content");
+    var startingScreen = document.getElementById("starting-screen");
+
+    startImage.addEventListener("click", function() {
+        startImage.style.display = "none";
+        introVideo.style.display = "block";
+        introVideo.play();
+    });
+
+    introVideo.addEventListener("ended", function() {
+        startingScreen.style.display = "none";
+        mainContent.style.display = "block";
+        document.body.style.overflow = "auto"; // Re-enable scrolling
+    });
+});
+      </script>
        
 
         <script>
