@@ -27,6 +27,7 @@
                 
   <div id="starting-screen">
     <img src="img/core-img/coin.png" id="start-image" alt="Click to start">
+    <audio id="start-sound" src="../Windows_Port-main/audio/Windows_94_no_dist.wav"></audio>
     <video id="intro-video" width="100%" height="auto">
         <source src="img/core-img/coin.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -495,10 +496,13 @@ document.addEventListener("DOMContentLoaded", function() {
     var introVideo = document.getElementById("intro-video");
     var mainContent = document.getElementById("main-content");
     var startingScreen = document.getElementById("starting-screen");
+    var startSound = document.getElementById("start-sound");
+    
 
     startImage.addEventListener("click", function() {
         startImage.style.display = "none";
         introVideo.style.display = "block";
+        startSound.play();
         introVideo.play();
     });
 
